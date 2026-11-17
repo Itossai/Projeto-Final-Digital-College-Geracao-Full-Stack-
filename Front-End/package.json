@@ -10,8 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@primereact/core": "^11.2.3",
+    "@primeuix/themes": "^3.1.1",
+    "primeflex": "^4.0.0",
+    "primeicons": "^8.0.2",
+    "primereact": "^11.2.3",
     "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
