@@ -1,10 +1,8 @@
-import Layout from "./components/Layout";
+import Paths from "./routers/Paths";
 
 const App = () => {
   return ( <>
-  <Layout>
-    
-  </Layout>
+  <Paths />
   </> );
 }
  
