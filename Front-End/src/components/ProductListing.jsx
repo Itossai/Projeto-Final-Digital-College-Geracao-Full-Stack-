@@ -1,13 +1,16 @@
+import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
 
 const ProductListing = ({ products }) => {
     return (
         <div>
             {products.map((product) => (
-                <ProductCard
+                <Link
                     key={`${product.image}-${product.name}`}
-                    {...product}
-                />
+                    to={`/product/${product.id}`}
+                >
+                    <ProductCard {...product} />
+                </Link>
             ))}
         </div>
     );
