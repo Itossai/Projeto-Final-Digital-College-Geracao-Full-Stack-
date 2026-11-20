@@ -15,3 +15,40 @@
   --light-gray-3: #F5F5F5;
   --white: #FFFFFF;
 }
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+  background: var(--light-gray-3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+section .section-title {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.home-gallery {
+  width: min(1440px, 100%) !important;
+}
+
+@media (max-width: 768px) {
+  .home-gallery > div:first-child {
+    height: 360px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-gallery > div:first-child {
+    height: 260px !important;
+  }
+}

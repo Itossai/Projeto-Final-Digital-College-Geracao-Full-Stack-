@@ -98,14 +98,35 @@ const ProductListingPage = () => {
 
     return (
         <Layout>
-            <main>
-                <aside>
-                    <div>
-                        <label htmlFor="product-sort">Ordenar por</label>
+            <main className="flex flex-column lg:flex-row gap-4 px-3 md:px-5 lg:px-7 py-5">
+                <aside
+                    className="flex flex-column gap-4 flex-shrink-0"
+                    style={{ width: "308px", maxWidth: "100%" }}
+                >
+                    <div className="flex flex-column gap-2">
+                        <label
+                            htmlFor="product-sort"
+                            style={{
+                                color: "var(--dark-gray-2)",
+                                fontSize: "16px",
+                            }}
+                        >
+                            Ordenar por
+                        </label>
                         <select
                             id="product-sort"
                             value={sortOrder}
                             onChange={(event) => setSortOrder(event.target.value)}
+                            className="px-3"
+                            style={{
+                                width: "308px",
+                                maxWidth: "100%",
+                                height: "60px",
+                                color: "var(--dark-gray-2)",
+                                border: "1px solid var(--light-gray-2)",
+                                borderRadius: "4px",
+                                backgroundColor: "var(--white)",
+                            }}
                         >
                             <option value="">Selecione</option>
                             <option value="lowest">Menor preço</option>
@@ -113,9 +134,27 @@ const ProductListingPage = () => {
                         </select>
                     </div>
 
-                    <section>
-                        <h2>Filtrar por</h2>
-                        <hr />
+                    <Section
+                        title="Filtrar por"
+                        titleAlign="left"
+                        className="p-4"
+                        titleStyle={{
+                            color: "var(--dark-gray-2)",
+                            fontSize: "16px",
+                        }}
+                        style={{
+                            width: "308px",
+                            maxWidth: "100%",
+                            backgroundColor: "var(--white)",
+                        }}
+                    >
+                        <hr
+                            className="my-3"
+                            style={{
+                                border: "none",
+                                borderTop: "1px solid var(--light-gray-2)",
+                            }}
+                        />
                         {filterGroups.map((group) => (
                             <FilterGroup
                                 key={group.key}
@@ -128,12 +167,14 @@ const ProductListingPage = () => {
                                 }
                             />
                         ))}
-                    </section>
+                    </Section>
                 </aside>
 
-                <Section title={productCountLabel} titleAlign="left">
-                    <ProductListing products={displayedProducts} />
-                </Section>
+                <div className="flex-1 min-w-0">
+                    <Section title={productCountLabel} titleAlign="left">
+                        <ProductListing products={displayedProducts} />
+                    </Section>
+                </div>
             </main>
         </Layout>
     );

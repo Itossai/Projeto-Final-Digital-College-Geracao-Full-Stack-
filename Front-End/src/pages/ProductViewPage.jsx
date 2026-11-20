@@ -24,8 +24,12 @@ const recommendedProducts = products.slice(0, 2);
 const ProductViewPage = () => {
     return (
         <Layout>
-            <main>
-                <section>
+            <main className="px-3 md:px-5 lg:px-7 py-5">
+                <Section
+                    title=""
+                    titleAlign="left"
+                    className="flex flex-column lg:flex-row gap-5 mb-5"
+                >
                     <Gallery
                         images={productImages}
                         showThumbs
@@ -43,25 +47,32 @@ const ProductViewPage = () => {
                         priceDiscount={products[0].priceDiscount}
                         description="Descrição detalhada do produto."
                     >
-                        <section>
-                            <h2>Tamanho</h2>
+                        <Section
+                            title="Tamanho"
+                            titleAlign="left"
+                            className="mb-4"
+                            titleStyle={{ fontSize: "16px" }}
+                        >
                             <ProductOptions
                                 options={["39", "40", "41", "42"]}
                                 radius="4px"
                                 shape="square"
                                 type="text"
                             />
-                        </section>
-                        <section>
-                            <h2>Cor</h2>
+                        </Section>
+                        <Section
+                            title="Cor"
+                            titleAlign="left"
+                            titleStyle={{ fontSize: "16px" }}
+                        >
                             <ProductOptions
                                 options={["#000", "#111", "#222"]}
                                 shape="circle"
                                 type="color"
                             />
-                        </section>
+                        </Section>
                     </BuyBox>
-                </section>
+                </Section>
 
                 <Section
                     title="Produtos recomendados"

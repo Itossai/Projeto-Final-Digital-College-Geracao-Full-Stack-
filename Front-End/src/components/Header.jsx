@@ -23,16 +23,22 @@ const Header = () => {
     ];
 
     return (
-        <header className="surface-0 px-3 pt-4">
+        <header
+            className="w-full px-3 pt-4"
+            style={{
+                backgroundColor: "var(--white)",
+                boxSizing: "border-box",
+            }}
+        >
             <div
-                className="flex flex-column gap-3 mx-auto lg:flex-row lg:align-items-center lg:gap-4"
+                className="flex flex-column gap-3 mx-auto md:flex-row md:align-items-center md:gap-4"
                 style={{ maxWidth: "1200px" }}
             >
                 <Link
                     to="/"
                     className="flex align-items-center no-underline"
                     aria-label="Digital Store - início"
-                    style={{ flexShrink: 0 }}
+                    style={{ flexShrink: 0, width: "253px", maxWidth: "100%" }}
                 >
                     <Logo />
                 </Link>
@@ -53,9 +59,7 @@ const Header = () => {
                         value={searchQuery}
                         onChange={(event) => setSearchQuery(event.target.value)}
                         className="flex-1 w-full border-none shadow-none bg-transparent p-0"
-                        style={{ minWidth: 0,
-                            fontSize:"2em"
-                         }}
+                        style={{ minWidth: 0, fontSize: "14px" }}
                     />
                     <Button
                         type="submit"
@@ -108,8 +112,26 @@ const Header = () => {
                         className="inline-flex align-items-center justify-content-center"
                         role="img"
                         aria-label="Carrinho de compras"
+                        style={{ position: "relative" }}
                     >
                         <img src={cartIcon} alt="" width="20" height="21" />
+                        <span
+                            className="flex align-items-center justify-content-center"
+                            style={{
+                                position: "absolute",
+                                top: "-10px",
+                                right: "-10px",
+                                width: "16px",
+                                height: "16px",
+                                borderRadius: "50%",
+                                backgroundColor: "var(--error)",
+                                color: "var(--white)",
+                                fontSize: "10px",
+                                lineHeight: 1,
+                            }}
+                        >
+                            2
+                        </span>
                     </span>
                 </div>
             </div>
