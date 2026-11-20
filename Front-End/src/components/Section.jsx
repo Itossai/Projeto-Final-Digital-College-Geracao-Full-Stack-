@@ -5,17 +5,10 @@ const Section = ({ title, titleAlign = "left", link, children }) => {
 
     return (
         <section>
-            <div
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "16px",
-                }}
-            >
+            <div className="flex align-items-center gap-3">
                 <h2
+                    className="flex-1 m-0"
                     style={{
-                        flex: 1,
-                        margin: 0,
                         color: "var(--dark-gray-2)",
                         fontSize: "24px",
                         textAlign: alignment,
