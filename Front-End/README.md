@@ -1,16 +1,62 @@
-# React + Vite
+# Front-End
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicacao front-end da Digital Store, desenvolvida com React, Vite e PrimeReact.
 
-Currently, two official plugins are available:
+## Pre-requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 20.19+ ou Node.js 22.12+
+- npm
 
-## React Compiler
+## Instalacao
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Na pasta do projeto front-end, instale as dependencias:
 
-## Expanding the ESLint configuration
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Configuracao
+
+Caso necessario, configure a chave do PrimeReact no arquivo `.env`:
+
+```env
+VITE_PRIME_LICENSE_KEY=sua_chave
+```
+
+## Executar em desenvolvimento
+
+```bash
+npm run dev
+```
+
+Acesse normalmente:
+
+```text
+http://localhost:5173
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+Os arquivos de producao serao gerados na pasta `dist`.
+
+## Pre-visualizar o build
+
+```bash
+npm run preview
+```
+
+## Lint
+
+```bash
+npm run lint
+```
+
+## Paginas
+
+- `/`: pagina inicial
+- `/products`: listagem de produtos
+- `/product/:id`: pagina do produto
