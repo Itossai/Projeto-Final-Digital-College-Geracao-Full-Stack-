@@ -45,7 +45,13 @@ const ProductListingPage = () => {
         gender: [],
     });
 
-    const searchQuery = searchParams.get("q")?.trim().toLowerCase() ?? "";
+    const searchQuery = (
+        searchParams.get("filter") ??
+        searchParams.get("q") ??
+        ""
+    )
+        .trim()
+        .toLowerCase();
     const filteredProducts = products.filter((product) => {
         const matchesSearch = product.name.toLowerCase().includes(searchQuery);
         const matchesFilters = filterGroups.every(({ key }) => {
